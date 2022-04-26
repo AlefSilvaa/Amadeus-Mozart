@@ -8,20 +8,50 @@
    const pais = "Estados Unidos"
 */
 
+/*array.indexOf(elementoDePesquisa, [pontoInicial = 0])*/
+
 function clique(){
     alert("Você clicou no botão")
 }
 
 let nome = window.document.getElementById('nome')
-let email = window.document.getElementById('nemail')
-let assunto = window.document.getElementsByName('assusnto')
+let email = document.querySelector('#email')
+let assunto = document.querySelector('#assusnto')
+let nomeOk = false
+let emailOk = false
+let assuntoOk = false
+let mapa = document.querySelector('#mapa')
 
-function enviar(){
-    if(nome.value == "" || email.value == "" || assusto.value == ""){
-        alert("Todos os campos devem ser preenchidos!")
-        return flase
-    }else{
-    alert("Olá" + nome.value + "! seu feedback foi enviado com sucesso!")
-    return true
+nome.style.width = '100%'
+email.style.width = '100%'
+
+function validaNome() {
+
+    let txtNome = document.querySelector('#txtNome')
+    if (nome.ariaValueMax.length < 3) {
+        txtNome.innerHTML = 'Nome Inválido'
+        txtNome.style.color = 'red'
+    } else {
+        txtNome.innerHTML = 'Nome Válido'
+        txtNome.style.color = 'green'
+        nomeOk = true
+    }
 }
+
+function enviar() {
+    if (nomeOK == true && emailOK == true && assuntoOK == true) {
+        alert ('Formulario enviado com sucesso!')
+    } else {
+        alert ('Preencha o formulario corretamente antes de enviar...')
+    }
+}
+
+function mapaZoom(){
+  mapa.style.width = '800px'
+  mapa.style.height= '600px'
+}
+
+function mapaNormal() {
+    mapa.style.width = '400px'
+    mapa.style.height= '250px'
 }
